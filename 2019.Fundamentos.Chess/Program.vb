@@ -16,11 +16,11 @@ Module Program
             'Console.WriteLine(IngresarFila())
             pieza = getPiezaEnCasilla(tablero, columnaOrigen, filaOrigen)
             Console.WriteLine(pieza.ToString)
-            If pieza <> Piezas.__ Then
+            If pieza <> Piezas._nula_ Then
                 Console.WriteLine("Destino")
                 columaDestino = IngresarColumna()
                 filaDestino = IngresarFila()
-                If getPiezaEnCasilla(tablero, columaDestino, filaDestino) = Piezas.__ Then
+                If getPiezaEnCasilla(tablero, columaDestino, filaDestino) = Piezas._nula_ Then
                     If validarMovimiento(pieza, columnaOrigen, filaOrigen, columaDestino, filaDestino) Then
                         moverPieza(tablero, columnaOrigen, filaOrigen, columaDestino, filaDestino)
                         Console.WriteLine("Pieza movida")
@@ -94,17 +94,17 @@ Module Program
     End Function
     Sub moverPieza(tablero(,) As Piezas, columnaOrigen As SByte, filaOrigen As SByte, columnaDestino As SByte, filaDestino As SByte)
         tablero(columnaDestino, filaDestino) = tablero(columnaOrigen, filaOrigen)
-        tablero(columnaOrigen, filaOrigen) = Piezas.__
+        tablero(columnaOrigen, filaOrigen) = Piezas._nula_
     End Sub
     Sub MostrarTablero(tablero(,) As Piezas)
         Console.Clear()
         For x = 7 To 0 Step -1
-            Console.Write(vbCrLf & x + 1 & vbTab)
+            Console.Write(vbCrLf & vbCrLf & x + 1 & vbTab)
             For y = 0 To 7 Step 1
                 Console.Write(tablero(y, x).ToString & vbTab)
             Next
         Next
-        Console.WriteLine()
+        Console.WriteLine(vbCrLf)
         For x = 97 To 104
             Console.Write(vbTab & ChrW(x))
         Next

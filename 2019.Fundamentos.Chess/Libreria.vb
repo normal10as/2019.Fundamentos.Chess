@@ -1,6 +1,6 @@
 ﻿Module Libreria
     Enum Piezas
-        __
+        _nula_
         Peón
         Rey
         Dama

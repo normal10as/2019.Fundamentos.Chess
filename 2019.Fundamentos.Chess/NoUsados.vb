@@ -30,7 +30,7 @@
             Case "c"
                 Return Piezas.Caballo
             Case Else
-                Return Piezas.__
+                Return Piezas._nula_
         End Select
     End Function
     Function EstaPiezaEnCasilla(tablero(,) As Piezas, pieza As Piezas, columna As Char, fila As SByte) As Boolean
