@@ -1,6 +1,6 @@
 ﻿Module Libreria
     Enum Piezas
-        _nula_
+        __
         Peón
         Rey
         Dama
@@ -18,6 +18,7 @@
         tablero(5, 1) = Piezas.Alfil
         tablero(6, 0) = Piezas.Caballo
         tablero(7, 3) = Piezas.Torre
+        tablero(1, 1) = Piezas.Peón
         Return tablero
     End Function
     Sub MostrarTablero(tablero(,) As Piezas)
