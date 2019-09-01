@@ -16,7 +16,7 @@ Module Program
             'Console.WriteLine(IngresarFila())
             pieza = getPiezaEnCasilla(tablero, columnaOrigen, filaOrigen)
             Console.WriteLine(pieza.ToString)
-            If pieza <> Piezas.__ Then
+            If isPieza(pieza) Then
                 Console.WriteLine("Destino")
                 columaDestino = IngresarColumna()
                 filaDestino = IngresarFila()
@@ -37,6 +37,9 @@ Module Program
             'Loop Until EstaPiezaEnCasilla(tablero, pieza, columnaOrigen, filaOrigen)
         Loop While True
     End Sub
+    Private Function isPieza(pieza As Piezas) As Boolean
+        Return pieza <> Piezas.__
+    End Function
     Function IngresarColumna() As SByte
         Dim columna As Char
         Do
